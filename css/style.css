@@ -57,7 +57,7 @@ header svg.icon__xl {
     cursor: pointer;
 }
 
-nav li a {
+nav.main-nav li a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,6 +129,15 @@ nav.main-nav .box-buttons {
 .main-post {
     background: var(--color-bg);
     padding: 50px 20px;
+    width: 100%;
+}
+
+.main-blog {
+    display: block;
+    background: var(--color-bg);
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .content-box {
@@ -225,6 +234,29 @@ nav.main-nav .box-buttons {
     width: 100%;
     max-width: var(--lg);
     margin: 20px auto;
+}
+
+.post .content {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.post figure img {
+    width: 100%;
+    height: auto;
+}
+
+
+.post-header.content,
+.post-footer.content {
+    padding: 20px 20px;
+
+}
+
+.post figure {
+    padding: 20px 0;
+    margin: 0;
 }
 
 .grid-cards {
@@ -360,5 +392,69 @@ footer p {
     .box-texto h2 {
         font-size: 26px;
         margin-bottom: 10px;
+    }
+}
+
+/* === LAYOUT GENERAL CON SIDEBAR === */
+.layout-with-sidebar {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem 1rem;
+    max-width: 1180px;
+    margin: 10px auto 0 auto;
+    background-color: var(--color-light);
+}
+
+/* === SIDEBAR === */
+.sidebar-toc {
+    position: sticky;
+    top: 120px;
+    /* ajusta según tu header */
+    align-self: start;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+}
+
+.sidebar-toc h3 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar-toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-toc ul li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-toc a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.sidebar-toc a:hover {
+    color: #007bff;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .layout-with-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar-toc {
+        position: relative;
+        top: 0;
+        margin-bottom: 2rem;
     }
 }
